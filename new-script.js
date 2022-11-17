@@ -129,3 +129,7 @@ function insertTodoIntoDom(todo) {
 updateTheDom();
 
 // Event listeners
+
+addBtn.addEventListener("click", () => {
+  addTodoToLocalStorage(todo.value);
+});

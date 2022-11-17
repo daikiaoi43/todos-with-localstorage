@@ -10,8 +10,7 @@ function addTodoToLocalStorage(text) {
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
-  let todo = { text: text, status: false };
-  todos.push(todo);
+  todos.push({ text, status: false });
   localStorage.setItem("todos", JSON.stringify(todos));
 
   updateTheDom();

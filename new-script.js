@@ -23,6 +23,7 @@ function removeTodoFromLocalStorage(text) {
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
+
   todos = todos.filter((todo) => todo.text !== text);
   localStorage.setItem("todos", JSON.stringify(todos));
 
@@ -67,7 +68,7 @@ function insertTodoIntoDom(todo) {
   const text = document.createElement("p");
   text.appendChild(todoTextNode);
   text.classList.add("text");
-  if (todo.status === "false") {
+  if (todo.status == true) {
     text.classList.add("finished-todo");
   }
 

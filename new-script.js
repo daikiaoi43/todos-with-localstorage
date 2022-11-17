@@ -1,9 +1,18 @@
+// Selectors
 const todo = document.querySelector(".todo");
 const addBtn = document.querySelector(".add-btn");
 const todoList = document.querySelector(".todo-list");
 const todoItems = document.querySelectorAll(".todo-item");
 
+// Functions
+
 function addTodoToLocalStorage(text) {
+  /**
+   * add todo to local storage:
+   * - take a text as argument
+   * - add todo to local storage
+   * - call updateTheDom function
+   */
   let todos;
   if (localStorage.getItem("todos") === null) {
     todos = [];
@@ -17,6 +26,12 @@ function addTodoToLocalStorage(text) {
 }
 
 function removeTodoFromLocalStorage(text) {
+  /**
+   * remove todo from local storage:
+   * - take a text as argument
+   * - remove todo from local storage
+   * - call updateTheDom function
+   */
   let todos;
   if (localStorage.getItem("todos") === null) {
     todos = [];
@@ -31,6 +46,12 @@ function removeTodoFromLocalStorage(text) {
 }
 
 function changeTodoStatusInLocalStorage(text) {
+  /**
+   * change the status of todo in local storage:
+   * - take a text as argument
+   * - change the status of todo in local storage
+   * - call updateTheDom function
+   */
   let todos;
   if (localStorage.getItem("todos") === null) {
     todos = [];
@@ -46,12 +67,23 @@ function changeTodoStatusInLocalStorage(text) {
 }
 
 function clearTodosFromLocalStorage() {
+  /**
+   * clear todos from local storage:
+   * - clear todos from local storage
+   * - call updateTheDom function
+   */
   localStorage.clear();
 
   updateTheDom();
 }
 
 function updateTheDom() {
+  /**
+   * update the dom by displaying todos stored in local storage:
+   * - empty the dom
+   * - get all todos from local storage
+   * - loop throw todos and call insertTodoIntoDom
+   */
   todoList.innerHTML = "";
   let todos = localStorage.getItem("todos");
   if (todos) {
@@ -63,6 +95,12 @@ function updateTheDom() {
 }
 
 function insertTodoIntoDom(todo) {
+  /**
+   * insert a todo into the dom:
+   * - take a todo as argument
+   * - create (div > p + button)
+   * - insert the div element into the dom
+   */
   // create "text" element
   const todoTextNode = document.createTextNode(todo.text);
   const text = document.createElement("p");
@@ -89,3 +127,5 @@ function insertTodoIntoDom(todo) {
 }
 
 updateTheDom();
+
+// Event listeners

@@ -2,14 +2,16 @@
 
 ## Project description
 
-This app allows you to manage a todo list, as you can create todos, delete todos and change todos status (finished or unfinished). This app created using _HTML_, _CSS_ and vanilla _JavaScript_. Data will be stored in the browser using _localStorage_.
+This app allows you to manage a todo list (create todos, delete todos and change todos status).
+This app created using _HTML_, _CSS_ and vanilla _JavaScript_.
+Data will be stored in the browser using _localStorage_.
 
-## Functionalities of the app
+## Functions:
 
 **addTodoToLocalStorage:**
 
 - takes a text as argument
-- create an object with (text 'string' & status 'boolean')
+- create an object with (text & status)
 - add todo to localStorage
 - call updateTheDom function
 
@@ -22,5 +24,20 @@ This app allows you to manage a todo list, as you can create todos, delete todos
 **changeTodoStatusInLocalStorage:**
 
 - takes an index as argument
-- change todo status in localStorage (finished or not)
+- change todo status in localStorage
 - call updateTheDom function
+
+**clearTodosFromLocalStorage:**
+
+- clear todos from localStorage
+- call updateTheDom function
+
+**updateTheDom:**
+
+- loop throw todos in localStorage and update the dom according to them
+
+## Event listeners:
+
+- listen to add todo button (click)
+- listen to remove todo button (click)
+- listen to change status (double click)

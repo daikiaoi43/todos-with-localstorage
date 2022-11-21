@@ -141,7 +141,14 @@ todoList.addEventListener("dblclick", (event) => {
     changeTodoStatusInLocalStorage(finishedTodo);
   }
   if (event.target.tagName === "DIV") {
-    finishedTodo = event.target.querySelector("p").innerText;
-    changeTodoStatusInLocalStorage(finishedTodo);
+    text = event.target.querySelector("p").innerText;
+    changeTodoStatusInLocalStorage(text);
+  }
+});
+
+todoList.addEventListener("click", (event) => {
+  if (event.target.tagName === "BUTTON") {
+    text = event.target.parentNode.querySelector("p").textContent;
+    removeTodoFromLocalStorage(text);
   }
 });

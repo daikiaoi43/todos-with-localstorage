@@ -131,5 +131,17 @@ updateTheDom();
 // Event listeners
 
 addBtn.addEventListener("click", () => {
+  // call addTodoToLocalStorage with the inserted todo in form input
   addTodoToLocalStorage(todo.value);
+});
+
+todoList.addEventListener("dblclick", (event) => {
+  if (event.target.tagName === "P") {
+    finishedTodo = event.target.innerText;
+    changeTodoStatusInLocalStorage(finishedTodo);
+  }
+  if (event.target.tagName === "DIV") {
+    finishedTodo = event.target.querySelector("p").innerText;
+    changeTodoStatusInLocalStorage(finishedTodo);
+  }
 });

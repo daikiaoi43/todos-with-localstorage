@@ -106,9 +106,9 @@ function insertTodoIntoDom(todo) {
   const text = document.createElement("p");
   text.appendChild(todoTextNode);
   text.classList.add("text");
-  if (todo.status == true) {
-    text.classList.add("finished-todo");
-  }
+  // if (todo.status == true) {
+  //   text.classList.add("finished-todo");
+  // }
 
   // create "delete-btn" element
   const deleteBtnTextNode = document.createTextNode("delete");
@@ -118,6 +118,11 @@ function insertTodoIntoDom(todo) {
 
   // create "todo-item" element
   const todoItem = document.createElement("div");
+  if (todo.status == true) {
+    todoItem.classList.add("finished-todo");
+  } else {
+    todoItem.classList.add("unfinished-todo");
+  }
   todoItem.appendChild(text);
   todoItem.appendChild(deleteBtn);
   todoItem.classList.add("todo-item");

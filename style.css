@@ -109,5 +109,9 @@ button {
 /* class to be applied when we finish a todo */
 
 .finished-todo {
-  text-decoration: line-through;
+  border-left: 5px solid rgb(7, 179, 7);
+}
+
+.unfinished-todo {
+  border-left: 5px solid rgb(171, 10, 10);
 }
